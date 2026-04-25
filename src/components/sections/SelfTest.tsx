@@ -43,9 +43,9 @@ export default function SelfTest() {
         >
           {/* Passion Test */}
           <div
-            className="flex flex-col gap-5 p-12"
-            style={{ background: 'var(--surface)' }}
-          >
+  className="flex flex-col gap-5 p-6 md:p-12"
+  style={{ background: 'var(--surface)' }}
+>
             <p
               className="font-cormorant font-bold text-[var(--text-dim)] leading-none"
               style={{ fontSize: '4rem', marginBottom: '-16px' }}
@@ -80,9 +80,9 @@ export default function SelfTest() {
 
           {/* Skill Test */}
           <div
-            className="flex flex-col gap-5 p-12"
-            style={{ background: 'var(--surface)' }}
-          >
+  className="flex flex-col gap-5 p-6 md:p-12"
+  style={{ background: 'var(--surface)' }}
+>
             <p
               className="font-cormorant font-bold text-[var(--text-dim)] leading-none"
               style={{ fontSize: '4rem', marginBottom: '-16px' }}

@@ -11,6 +11,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const navItems = [
+    { name: 'Library', path: '/#library' },
+    { name: 'Self Test', path: '/self-test' },
+    { name: 'Komunitas', path: '/komunitas' }
+  ]
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-[100] px-[6%] py-[22px] flex items-center justify-between transition-all duration-500"
@@ -21,20 +27,20 @@ export default function Navbar() {
       }}
     >
       {/* Logo */}
-      <a href="#" className="font-cormorant text-[1.1rem] font-normal tracking-[0.2em] text-[var(--text)] no-underline">
+      <a href="/" className="font-cormorant text-[1.1rem] font-normal tracking-[0.2em] text-[var(--text)] no-underline">
         MAN TO MAN
         <span className="italic opacity-50 text-[0.75rem] tracking-[0.15em] ml-[6px]">by Ourdays</span>
       </a>
 
       {/* Desktop nav */}
       <ul className="hidden md:flex gap-9 list-none">
-        {['Library', 'Self Test', 'Komunitas'].map((item) => (
-          <li key={item}>
+        {navItems.map((item) => (
+          <li key={item.name}>
             <a
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              href={item.path}
               className="text-[0.6rem] tracking-[0.35em] uppercase text-[var(--text-mid)] no-underline hover:text-[var(--text)] transition-colors duration-300"
             >
-              {item}
+              {item.name}
             </a>
           </li>
         ))}
@@ -42,7 +48,7 @@ export default function Navbar() {
 
       {/* CTA */}
       <a
-        href="#komunitas"
+        href="/komunitas"
         className="hidden md:inline-block text-[0.58rem] tracking-[0.3em] uppercase text-[var(--bg)] bg-[var(--text)] px-5 py-[9px] no-underline hover:bg-white transition-all duration-300"
       >
         Gabung
@@ -65,18 +71,18 @@ export default function Navbar() {
           className="absolute top-full left-0 right-0 border-t-2 border-b-2 py-6 px-[6%] flex flex-col gap-4"
           style={{ background: 'rgba(5,5,5,0.98)', borderColor: '#2e2e2e' }}
         >
-          {['Library', 'Self Test', 'Komunitas'].map((item) => (
+          {navItems.map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              key={item.name}
+              href={item.path}
               className="text-[0.6rem] tracking-[0.35em] uppercase text-[var(--text-mid)] no-underline hover:text-[var(--text)]"
               onClick={() => setMenuOpen(false)}
             >
-              {item}
+              {item.name}
             </a>
           ))}
           <a
-            href="#komunitas"
+            href="/komunitas"
             className="text-[0.58rem] tracking-[0.3em] uppercase text-[var(--bg)] bg-[var(--text)] px-5 py-[9px] no-underline w-fit mt-2"
             onClick={() => setMenuOpen(false)}
           >

@@ -36,8 +36,7 @@ export default function Community() {
         style={{ gap: '2px', background: '#2e2e2e', border: '2px solid #2e2e2e' }}
       >
         {/* WhatsApp */}
-        <div className="flex flex-col gap-6 p-12" style={{ background: 'var(--bg)' }}>
-          <div>
+<div className="flex flex-col gap-6 p-6 md:p-12" style={{ background: 'var(--bg)' }}>          <div>
             <p className="text-[0.5rem] tracking-[0.4em] uppercase text-[var(--text-dim)] mb-2">Platform 01</p>
             <h3 className="font-cormorant font-bold text-white text-[1.8rem] mb-3">WhatsApp</h3>
             <p className="font-cormorant italic text-[var(--text-mid)] text-[1rem] leading-[1.7]">
@@ -67,8 +66,7 @@ export default function Community() {
         </div>
 
         {/* Discord */}
-        <div className="flex flex-col gap-6 p-12" style={{ background: 'var(--bg)' }}>
-          <div>
+<div className="flex flex-col gap-6 p-6 md:p-12" style={{ background: 'var(--bg)' }}>          <div>
             <p className="text-[0.5rem] tracking-[0.4em] uppercase text-[var(--text-dim)] mb-2">Platform 02</p>
             <h3 className="font-cormorant font-bold text-white text-[1.8rem] mb-3">Discord</h3>
             <p className="font-cormorant italic text-[var(--text-mid)] text-[1rem] leading-[1.7]">
@@ -100,19 +98,20 @@ export default function Community() {
 
       {/* Stats bar */}
       <div
-        className="grid grid-cols-3"
-        style={{ border: '2px solid #2e2e2e' }}
-      >
+  className="grid grid-cols-1 md:grid-cols-3"
+  style={{ border: '2px solid #2e2e2e' }}
+>
         {[
           { num: '2,400+', label: 'Anggota Aktif' },
           { num: '30+', label: 'Buku Dikurasi' },
           { num: '1%', label: 'Lebih Baik Tiap Hari' },
         ].map((stat, i) => (
-          <div
-            key={i}
-            className="py-8 px-6 text-center"
-            style={{ borderRight: i < 2 ? '2px solid #2e2e2e' : 'none' }}
-          >
+    <div
+      key={i}
+      className={`py-6 px-4 md:py-8 md:px-6 text-center ${
+        i < 2 ? 'border-b-2 md:border-b-0 md:border-r-2 border-[#2e2e2e]' : ''
+      }`}
+    >
             <p className="font-cormorant font-bold text-white mb-1" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
               {stat.num}
             </p>
