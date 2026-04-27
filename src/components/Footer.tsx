@@ -44,13 +44,16 @@ export default function Footer() {
             <p className="text-[0.55rem] tracking-[0.4em] uppercase text-[#444] mb-2 font-bold">Hubungi Kami</p>
             <ul className="flex flex-col gap-3 list-none p-0">
               <li>
-                <a href="https://wa.me/621931656410" className="text-[0.8rem] text-[#888] hover:text-white transition-colors no-underline">WhatsApp</a>
+                <a href="https://wa.me/6281931656410" className="text-[0.8rem] text-[#888] hover:text-white transition-colors no-underline">WhatsApp</a>
               </li>
               <li>
-                <a href="#" className="text-[0.8rem] text-[#888] hover:text-white transition-colors no-underline">Instagram</a>
+                <a href="https://www.instagram.com/by.ourdays/" className="text-[0.8rem] text-[#888] hover:text-white transition-colors no-underline">Instagram</a>
               </li>
               <li>
-                <a href="mailto:hello@ourdays.com" className="text-[0.8rem] text-[#888] hover:text-white transition-colors no-underline">Email</a>
+                <a href="https://www.tiktok.com/@by.ourdays" className="text-[0.8rem] text-[#888] hover:text-white transition-colors no-underline">Tiktok</a>
+              </li>
+              <li>
+                <a href="mailto:Hallovalify@gmail.com" className="text-[0.8rem] text-[#888] hover:text-white transition-colors no-underline">Email</a>
               </li>
             </ul>
           </div>

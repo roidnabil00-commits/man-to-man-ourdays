@@ -38,7 +38,7 @@ export default function Community() {
 
   const whoTypes = [
     { id: '01', name: 'The Builders', desc: 'Pria yang sedang membangun bisnis atau karir.' },
-    { id: '02', name: 'The Seekers', desc: 'Pria yang mencari makna lebih dalam dari eksistensi.' },
+    { id: '02', name: 'The Seekers', desc: 'Pria yang mencari makna lebih dalam dari  eksistensi diri.' },
     { id: '03', name: 'The Warriors', desc: 'Pria yang sedang melatih disiplin fisik dan mental.' }
   ]
 
@@ -114,7 +114,7 @@ export default function Community() {
           <div className="h-12 w-12 md:h-16 md:w-16 border border-white/20 flex items-center justify-center font-cormorant italic text-[1.2rem] md:text-[1.8rem]">WA</div>
           <h3 className="font-cormorant font-bold text-[1.4rem] md:text-[2.5rem] leading-tight">Grup Diskusi <br /> Harian.</h3>
           <p className="text-[#666] text-[0.85rem] md:text-[1.1rem] leading-relaxed hidden sm:block">Akses langsung ke diskusi harian dan networking personal.</p>
-          <a href="https://wa.me/621931656410" className="text-[0.5rem] md:text-[0.65rem] tracking-[0.3em] uppercase border-b-2 border-white pb-2 hover:opacity-50 transition-all no-underline">Gabung WA →</a>
+          <a href="https://chat.whatsapp.com/Bynp5NubMMV50mFR9yA4zw" className="text-[0.5rem] md:text-[0.65rem] tracking-[0.3em] uppercase border-b-2 border-white pb-2 hover:opacity-50 transition-all no-underline">Gabung WA →</a>
         </motion.div>
 
         <motion.div {...fadeUp(0.2)} className="bg-[#050505] p-8 md:p-24 flex flex-col items-start gap-8">
@@ -143,7 +143,7 @@ export default function Community() {
         </div>
         <motion.div {...fadeUp(0.3)} className="bg-[#0a0a0a] overflow-hidden grayscale relative">
            <img 
-            src="https://i.pinimg.com/236x/07/20/80/072080414f058a0ea72fd866ce108b8f.jpg" 
+            src="hero-video.png" 
             alt="The Seekers" 
             className="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-[3s]"
           />
