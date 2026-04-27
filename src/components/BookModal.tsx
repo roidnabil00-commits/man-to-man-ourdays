@@ -37,7 +37,7 @@ export default function BookModal({ book, onClose }: BookModalProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    const waNumber = '621931656410'
+    const waNumber = '6281931656410'
     
     // Format pesan WhatsApp
     const message = `Halo kak, saya mau akses buku *${book.title}*.\n\nBerikut data diri saya:\n- Nama: ${formData.name}\n- No. WA: ${formData.phone}\n- Email: ${formData.email}\n- Umur: ${formData.age || '-'}\n- Pekerjaan: ${formData.job || '-'}\n\nMohon info selanjutnya ya kak!`

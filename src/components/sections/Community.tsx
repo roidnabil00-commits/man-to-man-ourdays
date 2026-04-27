@@ -69,7 +69,7 @@ export default function Community() {
           </p>
 
           <a 
-            href="https://wa.me/621931656410" 
+            href="https://wa.me/6281931656410" 
             className="bg-white text-black px-10 py-4 text-[0.6rem] font-bold tracking-[0.4em] uppercase hover:bg-neutral-200 transition-all no-underline"
           >
             Join The Fellowship →
