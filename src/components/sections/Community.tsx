@@ -1,124 +1,155 @@
 'use client'
+import { motion } from 'framer-motion'
 import { useReveal } from '@/lib/useReveal'
 
 export default function Community() {
   const headerRef = useReveal()
 
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay },
+  })
+
+  const values = [
+    {
+      num: '01',
+      title: 'Integritas Aktif',
+      desc: 'Bukan sekadar bicara, tapi membuktikan melalui tindakan nyata.',
+    },
+    {
+      num: '02',
+      title: 'Radical Candor',
+      desc: 'Diskusi jujur dan tajam tanpa basa-basi untuk tumbuh cepat.',
+    },
+    {
+      num: '03',
+      title: '1% Setiap Hari',
+      desc: 'Compound effect dari disiplin harian mengalahkan semua shortcut.',
+    },
+  ]
+
+  const stats = [
+    { num: '2,400+', label: 'Anggota Aktif' },
+    { num: '1,800+', label: 'Pebisnis & Profesional' },
+    { num: '1%', label: 'Lebih Baik Tiap Hari' },
+  ]
+
+  const whoTypes = [
+    { id: '01', name: 'The Builders', desc: 'Pria yang sedang membangun bisnis atau karir.' },
+    { id: '02', name: 'The Seekers', desc: 'Pria yang mencari makna lebih dalam dari eksistensi.' },
+    { id: '03', name: 'The Warriors', desc: 'Pria yang sedang melatih disiplin fisik dan mental.' }
+  ]
+
   return (
-    <section
-      id="komunitas"
-      className="px-[6%] py-24"
-      style={{ background: 'var(--bg)', borderTop: '2px solid #2e2e2e' }}
-    >
-      {/* Header */}
-      <div ref={headerRef} className="reveal mb-16">
-        <p className="text-[0.58rem] tracking-[0.55em] uppercase text-[var(--text-dim)] mb-3">
-          03 · Komunitas
-        </p>
-        <div className="w-8 h-px bg-[#2e2e2e] mb-5" />
-        <h2
-          className="font-cormorant font-bold text-white leading-[1.05] mb-3"
-          style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
-        >
-          Jangan Tumbuh Sendiri.
-        </h2>
-        <p
-          className="font-cormorant italic font-light text-[var(--text-mid)] max-w-[560px] leading-[1.75]"
-          style={{ fontSize: 'clamp(0.95rem, 1.5vw, 1.15rem)' }}
-        >
-          Lingkungan menentukan segalanya. Gabung bersama ribuan pria yang serius dalam perjalanan pertumbuhan mereka — saling mendorong, berbagi insight, dan berkembang bersama.
-        </p>
-      </div>
-
-      {/* Community cards */}
-      <div
-        className="grid md:grid-cols-2 mb-16"
-        style={{ gap: '2px', background: '#2e2e2e', border: '2px solid #2e2e2e' }}
-      >
-        {/* WhatsApp */}
-<div className="flex flex-col gap-6 p-6 md:p-12" style={{ background: 'var(--bg)' }}>          <div>
-            <p className="text-[0.5rem] tracking-[0.4em] uppercase text-[var(--text-dim)] mb-2">Platform 01</p>
-            <h3 className="font-cormorant font-bold text-white text-[1.8rem] mb-3">WhatsApp</h3>
-            <p className="font-cormorant italic text-[var(--text-mid)] text-[1rem] leading-[1.7]">
-              Group eksklusif untuk diskusi harian, share progress, dan saling support. Langsung, personal, dan high-quality interactions.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            {['Daily motivation & insights', 'Book discussion threads', 'Progress sharing', 'Direct access ke founder'].map((perk) => (
-              <div key={perk} className="flex items-center gap-3 text-[0.7rem] tracking-[0.05em] text-[var(--text-mid)]">
-                <span className="w-4 h-px bg-white/20 shrink-0" />
-                {perk}
-              </div>
-            ))}
-          </div>
-
-          <a
-            href="https://wa.me/yourlink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-3 text-[var(--bg)] text-[0.6rem] tracking-[0.3em] uppercase font-medium no-underline hover:bg-[#e0e0e0] transition-all duration-300 w-fit"
-            style={{ background: 'var(--white)' }}
-          >
-            Gabung WhatsApp
-            <span className="w-4 h-px bg-current" />
-          </a>
+    <section id="komunitas" className="bg-[#050505] text-white overflow-hidden">
+      
+      {/* ── 1. HERO SECTION (RATA TENGAH & VISIBLE BG) ── */}
+      <div className="relative min-h-screen flex flex-col items-center justify-center px-[6%] pt-20 pb-20 text-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="hero-video.png" 
+            alt="Community Background" 
+            className="w-full h-full object-cover grayscale opacity-40"
+          />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
 
-        {/* Discord */}
-<div className="flex flex-col gap-6 p-6 md:p-12" style={{ background: 'var(--bg)' }}>          <div>
-            <p className="text-[0.5rem] tracking-[0.4em] uppercase text-[var(--text-dim)] mb-2">Platform 02</p>
-            <h3 className="font-cormorant font-bold text-white text-[1.8rem] mb-3">Discord</h3>
-            <p className="font-cormorant italic text-[var(--text-mid)] text-[1rem] leading-[1.7]">
-              Server dengan berbagai channel berdasarkan topik. Deep-dive discussions, resources library, dan networking yang lebih terstruktur.
-            </p>
-          </div>
+        <motion.div ref={headerRef} {...fadeUp(0)} className="relative z-10 flex flex-col items-center gap-8 max-w-[900px]">
+          <p className="text-[0.6rem] tracking-[0.6em] uppercase text-[#888]">03 · Komunitas</p>
+          
+          <h1 className="font-cormorant font-bold leading-[0.9] tracking-tighter" style={{ fontSize: 'clamp(3rem, 10vw, 7.5rem)' }}>
+            JANGAN <br /> <span className="italic font-light opacity-50">TUMBUH</span> <br /> SENDIRI.
+          </h1>
 
-          <div className="flex flex-col gap-3">
-            {['Topik-based channels', 'Resource library', 'Weekly challenges', 'Networking & kolaborasi'].map((perk) => (
-              <div key={perk} className="flex items-center gap-3 text-[0.7rem] tracking-[0.05em] text-[var(--text-mid)]">
-                <span className="w-4 h-px bg-white/20 shrink-0" />
-                {perk}
-              </div>
-            ))}
-          </div>
+          <p className="font-cormorant italic text-[1.2rem] md:text-[1.5rem] text-[#aaa] leading-relaxed max-w-[700px]">
+            "Lingkungan adalah arsitek tak terlihat dari perilaku kita. Di sini, kami membangun standar baru untuk pria yang menolak menjadi rata-rata."
+          </p>
 
-          <a
-            href="https://discord.gg/yourlink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-3 text-[var(--text-mid)] text-[0.6rem] tracking-[0.3em] uppercase no-underline hover:text-[var(--text)] transition-all duration-300 w-fit"
-            style={{ border: '2px solid #2e2e2e' }}
+          <a 
+            href="https://wa.me/621931656410" 
+            className="bg-white text-black px-10 py-4 text-[0.6rem] font-bold tracking-[0.4em] uppercase hover:bg-neutral-200 transition-all no-underline"
           >
-            Gabung Discord
-            <span className="w-4 h-px bg-current" />
+            Join The Fellowship →
           </a>
+        </motion.div>
+      </div>
+
+      {/* ── 2. STATS BAR (PUTIH, HITAM, MOBILE = DESKTOP) ── */}
+      <div className="bg-white text-black border-y-2 border-black">
+        <div className="grid grid-cols-3">
+          {stats.map((s, i) => (
+            <div 
+              key={i} 
+              className="py-12 px-2 text-center border-r-2 border-black last:border-r-0 flex flex-col items-center justify-center gap-2"
+            >
+              <p className="font-cormorant font-bold text-[1.5rem] md:text-[2.5rem] leading-none">{s.num}</p>
+              <p className="text-[0.45rem] md:text-[0.55rem] tracking-[0.2em] font-bold uppercase opacity-60 leading-tight">
+                {s.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Stats bar */}
-      <div
-  className="grid grid-cols-1 md:grid-cols-3"
-  style={{ border: '2px solid #2e2e2e' }}
->
-        {[
-          { num: '2,400+', label: 'Anggota Aktif' },
-          { num: '30+', label: 'Buku Dikurasi' },
-          { num: '1%', label: 'Lebih Baik Tiap Hari' },
-        ].map((stat, i) => (
-    <div
-      key={i}
-      className={`py-6 px-4 md:py-8 md:px-6 text-center ${
-        i < 2 ? 'border-b-2 md:border-b-0 md:border-r-2 border-[#2e2e2e]' : ''
-      }`}
-    >
-            <p className="font-cormorant font-bold text-white mb-1" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
-              {stat.num}
-            </p>
-            <p className="text-[0.55rem] tracking-[0.35em] uppercase text-[var(--text-dim)]">{stat.label}</p>
-          </div>
-        ))}
+      {/* ── 3. PRINSIP PERTUMBUHAN (MOBILE = DESKTOP) ── */}
+      <div className="px-[6%] py-32 border-b-2 border-[#1a1a1a]">
+        <p className="text-[0.6rem] tracking-[0.6em] uppercase text-[#666] mb-20 text-center">Prinsip Pertumbuhan</p>
+        <div className="grid grid-cols-3 gap-4 md:gap-16">
+          {values.map((v, i) => (
+            <motion.div key={i} {...fadeUp(i * 0.2)} className="flex flex-col gap-4">
+              <span className="font-cormorant italic text-[2.5rem] md:text-[4.5rem] opacity-20 leading-none">{v.num}</span>
+              <h4 className="text-[0.7rem] md:text-[1.1rem] font-bold tracking-[0.1em] uppercase">{v.title}</h4>
+              <p className="font-cormorant text-[#666] text-[0.8rem] md:text-[1.2rem] leading-relaxed italic">{v.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
+
+      {/* ── 4. PLATFORMS (MOBILE = DESKTOP) ── */}
+      <div className="grid grid-cols-2 gap-[2px] bg-[#1a1a1a] border-b-2 border-[#1a1a1a]">
+        <motion.div {...fadeUp(0)} className="bg-[#050505] p-8 md:p-24 border-r-2 border-[#1a1a1a] flex flex-col items-start gap-8">
+          <div className="h-12 w-12 md:h-16 md:w-16 border border-white/20 flex items-center justify-center font-cormorant italic text-[1.2rem] md:text-[1.8rem]">WA</div>
+          <h3 className="font-cormorant font-bold text-[1.4rem] md:text-[2.5rem] leading-tight">Grup Diskusi <br /> Harian.</h3>
+          <p className="text-[#666] text-[0.85rem] md:text-[1.1rem] leading-relaxed hidden sm:block">Akses langsung ke diskusi harian dan networking personal.</p>
+          <a href="https://wa.me/621931656410" className="text-[0.5rem] md:text-[0.65rem] tracking-[0.3em] uppercase border-b-2 border-white pb-2 hover:opacity-50 transition-all no-underline">Gabung WA →</a>
+        </motion.div>
+
+        <motion.div {...fadeUp(0.2)} className="bg-[#050505] p-8 md:p-24 flex flex-col items-start gap-8">
+          <div className="h-12 w-12 md:h-16 md:w-16 border border-white/20 flex items-center justify-center font-cormorant italic text-[1.2rem] md:text-[1.8rem]">DS</div>
+          <h3 className="font-cormorant font-bold text-[1.4rem] md:text-[2.5rem] leading-tight">Server Arsip <br /> Knowledge.</h3>
+          <p className="text-[#666] text-[0.85rem] md:text-[1.1rem] leading-relaxed hidden sm:block">Tempat segala resource, rekaman diskusi, dan channel spesifik.</p>
+          <a href="#" className="text-[0.5rem] md:text-[0.65rem] tracking-[0.3em] uppercase border-b-2 border-white pb-2 hover:opacity-50 transition-all no-underline">Masuk Discord →</a>
+        </motion.div>
+      </div>
+
+      {/* ── 5. SIAPA YANG KAMI CARI (DITAMBAHKAN KEMBALI) ── */}
+      <div className="grid grid-cols-2 min-h-[70vh]">
+        <div className="p-8 md:p-24 flex flex-col justify-center border-r-2 border-[#1a1a1a]">
+          <motion.h2 {...fadeUp(0)} className="font-cormorant font-bold text-[2rem] md:text-[4rem] leading-none mb-12">Siapa Yang <br /> Kami Cari?</motion.h2>
+          <div className="flex flex-col gap-10">
+            {whoTypes.map((item, i) => (
+              <motion.div key={i} {...fadeUp(i * 0.1)} className="flex gap-6 md:gap-8">
+                <span className="text-[0.6rem] md:text-[0.8rem] font-bold text-[#444]">{item.id}</span>
+                <div>
+                  <h5 className="text-[0.55rem] md:text-[0.7rem] tracking-[0.4em] uppercase font-bold mb-2">{item.name}</h5>
+                  <p className="text-[#666] font-light text-[0.75rem] md:text-[0.95rem] leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <motion.div {...fadeUp(0.3)} className="bg-[#0a0a0a] overflow-hidden grayscale relative">
+           <img 
+            src="https://i.pinimg.com/236x/07/20/80/072080414f058a0ea72fd866ce108b8f.jpg" 
+            alt="The Seekers" 
+            className="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-[3s]"
+          />
+        </motion.div>
+      </div>
+
     </section>
   )
 }

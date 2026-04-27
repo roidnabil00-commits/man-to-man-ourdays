@@ -1,10 +1,6 @@
-import type { Metadata } from 'next'
 import './globals.css'
-
-export const metadata: Metadata = {
-  title: 'Man to Man — by Ourdays',
-  description: 'Untuk pria yang tidak berhenti tumbuh.',
-}
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer' // 1. Import Footer di sini
 
 export default function RootLayout({
   children,
@@ -12,8 +8,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="id">
-      <body>{children}</body>
+    <html lang="en">
+      <body>
+        <Navbar />
+        {children}
+        <Footer /> {/* 2. Panggil Footer di sini (setelah children) */}
+      </body>
     </html>
   )
 }

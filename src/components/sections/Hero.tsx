@@ -89,7 +89,7 @@ export default function Hero() {
           style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)' }}
         >
           Platform pertumbuhan untuk pria yang serius. Buku terbaik, tes potensi diri,
-          dan komunitas yang dorong lo jadi 1% lebih baik setiap harinya.
+          dan komunitas yang dorongkamu jadi 1% lebih baik setiap harinya.
         </motion.p>
 
         {/* Buttons */}
