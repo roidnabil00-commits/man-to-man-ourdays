@@ -11,7 +11,9 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Catalog ditambahkan di urutan pertama menuju #arsenal
   const navItems = [
+    { name: 'Catalog', path: '/#arsenal' },
     { name: 'Library', path: '/#library' },
     { name: 'Self Test', path: '/self-test' },
     { name: 'Komunitas', path: '/komunitas' }
@@ -60,22 +62,22 @@ export default function Navbar() {
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Menu"
       >
-        <span className="hamburger-line" style={{ transform: menuOpen ? 'rotate(45deg) translate(4px, 4px)' : '' }} />
-        <span className="hamburger-line" style={{ opacity: menuOpen ? 0 : 1 }} />
-        <span className="hamburger-line" style={{ transform: menuOpen ? 'rotate(-45deg) translate(4px, -4px)' : '' }} />
+        <div className="w-6 h-[1.5px] bg-white transition-all duration-300" style={{ transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : '' }} />
+        <div className="w-6 h-[1.5px] bg-white transition-all duration-300" style={{ opacity: menuOpen ? 0 : 1 }} />
+        <div className="w-6 h-[1.5px] bg-white transition-all duration-300" style={{ transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : '' }} />
       </button>
 
       {/* Mobile menu */}
       {menuOpen && (
         <div
-          className="absolute top-full left-0 right-0 border-t-2 border-b-2 py-6 px-[6%] flex flex-col gap-4"
+          className="absolute top-full left-0 right-0 border-t-2 border-b-2 py-8 px-[6%] flex flex-col gap-5"
           style={{ background: 'rgba(5,5,5,0.98)', borderColor: '#2e2e2e' }}
         >
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.path}
-              className="text-[0.6rem] tracking-[0.35em] uppercase text-[var(--text-mid)] no-underline hover:text-[var(--text)]"
+              className="text-[0.65rem] tracking-[0.35em] uppercase text-[var(--text-mid)] no-underline hover:text-[var(--text)]"
               onClick={() => setMenuOpen(false)}
             >
               {item.name}
@@ -83,10 +85,10 @@ export default function Navbar() {
           ))}
           <a
             href="/komunitas"
-            className="text-[0.58rem] tracking-[0.3em] uppercase text-[var(--bg)] bg-[var(--text)] px-5 py-[9px] no-underline w-fit mt-2"
+            className="text-[0.6rem] tracking-[0.3em] uppercase text-[var(--bg)] bg-[var(--text)] px-6 py-3 no-underline w-fit mt-3 font-bold"
             onClick={() => setMenuOpen(false)}
           >
-            Gabung
+            Gabung Komunitas
           </a>
         </div>
       )}

@@ -61,15 +61,15 @@ export default function Community() {
           <p className="text-[0.6rem] tracking-[0.6em] uppercase text-[#888]">03 · Komunitas</p>
           
           <h1 className="font-cormorant font-bold leading-[0.9] tracking-tighter" style={{ fontSize: 'clamp(3rem, 10vw, 7.5rem)' }}>
-            JANGAN <br /> <span className="italic font-light opacity-50">TUMBUH</span> <br /> SENDIRI.
+            MARI <br /> <span className="italic font-light opacity-50">TUMBUH</span> <br /> BERSAMA.
           </h1>
 
           <p className="font-cormorant italic text-[1.2rem] md:text-[1.5rem] text-[#aaa] leading-relaxed max-w-[700px]">
-            "Lingkungan adalah arsitek tak terlihat dari perilaku kita. Di sini, kami membangun standar baru untuk pria yang menolak menjadi rata-rata."
+            "Lingkungan membentuk kebiasaan kerja dan hidup kita. Di sini, kami memfasilitasi para pria untuk melampaui standar umum dan mencapai potensi terbaik mereka."
           </p>
 
           <a 
-            href="https://wa.me/6281931656410" 
+            href="https://chat.whatsapp.com/Bynp5NubMMV50mFR9yA4zw" 
             className="bg-white text-black px-10 py-4 text-[0.6rem] font-bold tracking-[0.4em] uppercase hover:bg-neutral-200 transition-all no-underline"
           >
             Join The Fellowship →
